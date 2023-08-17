@@ -1,36 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { PlatformSection } from "../../types/Zesty";
 import PlatformItem from "./PlatformItem";
 
 const PAGE_SIZE = 10;
 
-export default function PlatformList() {
-  const [data, setData] = useState<PlatformSection[]>([]);
+export default function PlatformList({ data }: { data: PlatformSection[] }) {
   const [currentPage, setCurrentPage] = useState<number>(1);
-
-  useEffect(() => {
-    (async function fetchData() {
-      try {
-        const response = await fetch(
-          "https://www.zesty.io/-/gql/platform_section.json"
-        );
-        if (!response.ok) {
-          const { message } = await response.json();
-          throw new Error(message);
-        }
-        const data = await response.json();
-        if (data) {
-          setData([
-            ...(data as PlatformSection[]).sort(
-              (a, b) => parseInt(a.sort_order) - parseInt(b.sort_order)
-            ),
-          ]);
-        }
-      } catch (error: any) {
-        console.error(error.message);
-      }
-    })();
-  }, []);
 
   const startIndex = (currentPage - 1) * PAGE_SIZE;
   const endIndex = startIndex + PAGE_SIZE;
