@@ -10,7 +10,7 @@ export default function PlatformItem({
   description: PlatformSection["text_content"];
 }) {
   return (
-    <li className="bg-neutral-50 shadow-md rounded-2xl p-6 hover:scale-105 transition-all ease-in-out">
+    <li className="bg-neutral-50 shadow-md rounded-2xl p-6 hover:scale-[1.02] transition-all ease-in-out">
       <div>
         <h1 className="font-bold text-xl mb-4">{title}</h1>
         <div className="platform-content">
