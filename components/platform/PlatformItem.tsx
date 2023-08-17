@@ -14,7 +14,7 @@ export default function PlatformItem({
       <div>
         <h1 className="font-bold text-xl mb-4">{title}</h1>
         <div className="platform-content">
-          {description && parser(description)}
+          {description ? parser(description) : null}
         </div>
       </div>
     </li>
