@@ -73,7 +73,7 @@ export default function HomePage() {
           return (
             <li
               key={`platform_section_${idx}`}
-              className="bg-neutral-50 shadow-md rounded-2xl p-6 hover:scale-105 transition-all ease-in-out"
+              className="bg-neutral-50 shadow-md rounded-2xl p-6 hover:scale-[1.02] transition-all ease-in-out"
             >
               <div>
                 <h1 className="font-bold text-xl mb-4">{el.title}</h1>
