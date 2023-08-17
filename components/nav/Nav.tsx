@@ -2,15 +2,18 @@ import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-function MenuItem({ text, href }: { text: string; href: string }) {
+export function MenuItem({ text, href }: { text: string; href: string }) {
   const router = useRouter();
   return (
-    <li
-      className={`${
-        router.pathname === href ? "text-blue-500" : "hover:text-neutral-600"
-      }`}
-    >
-      <Link href={href}>{text}</Link>
+    <li>
+      <Link
+        href={href}
+        className={`${
+          router.pathname === href ? "text-blue-500" : "hover:text-neutral-600"
+        }`}
+      >
+        {text}
+      </Link>
     </li>
   );
 }
