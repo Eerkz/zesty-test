@@ -9,7 +9,7 @@ export default function Nav() {
           <Link href={"/"}>Home</Link>
         </li>
         <li className="hover:text-neutral-600">
-          <Link href={"/"}>About</Link>
+          <Link href={"/about"}>About</Link>
         </li>
       </ul>
     </nav>

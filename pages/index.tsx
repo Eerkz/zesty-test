@@ -3,7 +3,7 @@ import MainLayout from "../components/layouts/MainLayout";
 import { PlatformSection } from "../types/Zesty";
 import parser from "html-react-parser";
 
-export default function Home() {
+export default function HomePage() {
   const [data, setData] = useState<PlatformSection[]>([]);
 
   useEffect(() => {
