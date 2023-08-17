@@ -24,7 +24,7 @@ export default function PlatformList({ data }: { data: PlatformSection[] }) {
 
   return (
     <>
-      <div className="mb-4">
+      <div className="mb-4 flex flex-wrap gap-2">
         <button
           onClick={handlePreviousPage}
           disabled={currentPage === 1}
