@@ -47,7 +47,7 @@ export default function PlatformList({ data }: { data: PlatformSection[] }) {
             <PlatformItem
               key={`platform_section_${idx}`}
               title={el.title}
-              description={el.title}
+              description={el.text_content}
             />
           );
         })}
