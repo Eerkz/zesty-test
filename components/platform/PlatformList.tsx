@@ -7,7 +7,7 @@ const PAGE_SIZE = 10;
 export default function PlatformList() {
   const [data, setData] = useState<PlatformSection[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
-    console.log(data)
+
   useEffect(() => {
     (async function fetchData() {
       try {
