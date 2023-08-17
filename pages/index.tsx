@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import MainLayout from "../components/layouts/MainLayout";
 import { PlatformSection } from "../types/Zesty";
-import parser from "html-react-parser";
+import PlatformItem from "../components/platform/PlatformItem";
 
 const PAGE_SIZE = 10;
 
@@ -48,7 +48,6 @@ export default function HomePage() {
     );
   };
 
-
   return (
     <MainLayout>
       <div className="mb-4">
@@ -71,17 +70,11 @@ export default function HomePage() {
       <ul className="flex flex-col gap-y-8">
         {paginatedData.map((el, idx) => {
           return (
-            <li
+            <PlatformItem
               key={`platform_section_${idx}`}
-              className="bg-neutral-50 shadow-md rounded-2xl p-6 hover:scale-105 transition-all ease-in-out"
-            >
-              <div>
-                <h1 className="font-bold text-xl mb-4">{el.title}</h1>
-                <div className="platform-content">
-                  {el.text_content && parser(el.text_content)}
-                </div>
-              </div>
-            </li>
+              title={el.title}
+              description={el.title}
+            />
           );
         })}
       </ul>
