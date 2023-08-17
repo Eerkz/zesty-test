@@ -17,7 +17,7 @@ export default function AboutPage() {
         }
         const data = await response.json();
         if (data?.data?.[0]?.content?.page_content) {
-          setAboutData(data);
+          setAboutData(data.data[0].content.page_content);
         }
       } catch (error: any) {
         console.error(error.message);
